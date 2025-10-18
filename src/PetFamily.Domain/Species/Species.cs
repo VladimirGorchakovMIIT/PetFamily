@@ -17,7 +17,7 @@ public sealed class Species : Entity<Guid>
 
     public override Guid Id { get; protected set; }
 
-    public Title? Title { get; private set; }
+    public Title Title { get; private set; }
 
     public IReadOnlyList<Breed> Breeds => _breeds;
 

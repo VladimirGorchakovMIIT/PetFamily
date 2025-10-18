@@ -19,7 +19,7 @@ public sealed class Breed : Entity<Guid>
     
     public override Guid Id { get; protected set; }
 
-    public Title? Title { get; private set; }
+    public Title Title { get; private set; }
 
     public static Result<Breed> Create(Guid id, Title title)
     {
