@@ -1,14 +1,18 @@
 using CSharpFunctionalExtensions;
 using Microsoft.EntityFrameworkCore;
+using PetFamily.Domain.Shared;
 
 namespace PetFamily.Domain.Volunteer.ValueObjects;
 
 public record Requisites(string Title, string Description)
 {
-    public static Result<Requisites, string> Create(string title, string description)
+    public static Result<Requisites, Error> Create(string title, string description)
     {
-        if(string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(description))
-            return "You must provide a title or description";
+        if(string.IsNullOrWhiteSpace(title))
+            return Errors.General.ValueIsInvalid("Title");
+        
+        if(string.IsNullOrWhiteSpace(description))
+            return Errors.General.ValueIsInvalid("Description");
         
         return new Requisites(title, description);
     }
