@@ -22,7 +22,7 @@ public sealed class Volunteer : Entity<Guid>
 
     public override Guid Id { get; protected set; }
 
-    public FullName? FullName { get; private set; }
+    public FullName FullName { get; private set; }
 
     public Description? Description { get; private set; }
 

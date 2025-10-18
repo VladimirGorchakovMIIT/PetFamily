@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace PetFamily.Domain.Volunteer.ValueObjects;
 
-[Owned]
 public record FullName(string Name, string Surname, string Patronymic)
 {
     public static Result<FullName, string> Create(string name, string surname, string patronymic)

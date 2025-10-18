@@ -5,9 +5,24 @@ namespace PetFamily.Domain.Volunteer;
 
 public sealed class Pet : Entity<Guid>
 {
-    public Pet() { }
-
-    private Pet(Guid id, string nickname, PetType type, Description? description, Specifications? specifications, string breed, string phoneNumber, bool isNeutered, DateTime birthDate, bool isVaccinated, bool isFoundedHouse, Status status, DateTime dateCreation, SharedLinksSpecies? sharedLinks)
+    #region Constructors
+    
+    public Pet() {}
+    
+    private Pet(Guid id,
+        string nickname,
+        PetType type,
+        Description? description,
+        Specifications? specifications,
+        string breed,
+        PhoneNumber phoneNumber,
+        bool isNeutered,
+        DateTime birthDate,
+        bool isVaccinated,
+        bool isFoundedHouse,
+        Status status,
+        DateTime dateCreation,
+        SharedLinksSpecies? sharedLinks)
     {
         Id = id;
         Nickname = nickname;
@@ -24,10 +39,11 @@ public sealed class Pet : Entity<Guid>
         DateCreation = dateCreation;
         SharedLinks = sharedLinks;
     }
-
+    #endregion
+    
     public override Guid Id { get; protected set; }
 
-    public string Nickname { get; private set; }
+    public string Nickname { get; private set; } = default!;
 
     public PetType Type { get; private set; }
 
@@ -37,7 +53,7 @@ public sealed class Pet : Entity<Guid>
 
     public string Breed { get; private set; } = default!;
 
-    public string PhoneNumber { get; private set; } = default!;
+    public PhoneNumber PhoneNumber { get; private set; } = default!;
 
     public bool IsNeutered { get; private set; }
 
@@ -53,8 +69,38 @@ public sealed class Pet : Entity<Guid>
 
     public SharedLinksSpecies? SharedLinks { get; private set; }
 
-    public static Result<Pet> Create(Guid id, string nickname, PetType type, Description? description, Specifications? specifications, string breed, string phoneNumber, bool isNeutered, DateTime birthDate, bool isVaccinated, bool isFoundedHouse, Status status, DateTime dateCreation, SharedLinksSpecies? sharedLinks)
+    #region StaticMethods
+
+    public static Result<Pet> Create(Guid id, 
+        string nickname, 
+        PetType type, 
+        Description? description, 
+        Specifications? specifications, 
+        string breed, 
+        PhoneNumber phoneNumber, 
+        bool isNeutered, 
+        DateTime birthDate, 
+        bool isVaccinated, 
+        bool isFoundedHouse, 
+        Status status, 
+        DateTime dateCreation, 
+        SharedLinksSpecies? sharedLinks)
     {
-        return new Pet(id, nickname, type, description, specifications, breed, phoneNumber, isNeutered, birthDate, isVaccinated, isFoundedHouse, status, dateCreation, sharedLinks);
+        return new Pet(id, 
+            nickname, 
+            type, 
+            description, 
+            specifications,
+            breed,
+            phoneNumber, 
+            isNeutered, 
+            birthDate, 
+            isVaccinated, 
+            isFoundedHouse, 
+            status, 
+            dateCreation, 
+            sharedLinks);
     }
+
+    #endregion
 }

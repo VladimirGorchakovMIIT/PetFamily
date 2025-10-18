@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace PetFamily.Domain.Volunteer.ValueObjects;
 
-[Owned]
 public record Specifications(float Height, float Weight, Color Color, string HealthInformation)
 {
     public static Result<Specifications, string> Create(float height, float weight, Color color, string healthInformation)

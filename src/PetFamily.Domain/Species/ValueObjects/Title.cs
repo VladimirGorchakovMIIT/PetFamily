@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace PetFamily.Domain.Species.ValueObjects;
 
-[Owned]
 public record Title(string Value)
 {
     public static Result<Title, string> Create(string title)

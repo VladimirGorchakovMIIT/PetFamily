@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace PetFamily.Domain.Volunteer.ValueObjects;
 
-[Owned]
 public record SocialNetwork(string Title, string Url)
 {
     public static Result<SocialNetwork, string> Create(string title, string link)

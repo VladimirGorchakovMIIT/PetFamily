@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace PetFamily.Domain.Volunteer.ValueObjects;
 
-[Owned]
 public record Requisites(string Title, string Description)
 {
     public static Result<Requisites, string> Create(string title, string description)
