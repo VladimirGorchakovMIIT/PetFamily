@@ -10,7 +10,7 @@ public sealed class Pet : Entity<Guid>
     public Pet() {}
     
     private Pet(Guid id,
-        string nickname,
+        Nickname nickname,
         PetType type,
         Description? description,
         Specifications? specifications,
@@ -43,7 +43,7 @@ public sealed class Pet : Entity<Guid>
     
     public override Guid Id { get; protected set; }
 
-    public string Nickname { get; private set; } = default!;
+    public Nickname Nickname { get; private set; } = default!;
 
     public PetType Type { get; private set; }
 
@@ -72,7 +72,7 @@ public sealed class Pet : Entity<Guid>
     #region StaticMethods
 
     public static Result<Pet> Create(Guid id, 
-        string nickname, 
+        Nickname nickname, 
         PetType type, 
         Description? description, 
         Specifications? specifications, 
@@ -103,4 +103,15 @@ public sealed class Pet : Entity<Guid>
     }
 
     #endregion
+}
+
+public record Nickname(string Value)
+{
+    public static Result<Nickname, string> Create(string nickname)
+    {
+        if(string.IsNullOrWhiteSpace(nickname))
+            return "Nickname cannot be null or empty.";
+        
+        return new Nickname(nickname);
+    }
 }

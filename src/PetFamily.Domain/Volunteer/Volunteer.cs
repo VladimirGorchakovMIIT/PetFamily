@@ -14,7 +14,12 @@ public sealed class Volunteer : Entity<Guid>
     {
     }
 
-    private Volunteer(Guid id, FullName fullName, Description description, PhoneNumber phoneNumber, Requisites requisites, VolunteerDetails volunteerDetails) : base(id)
+    private Volunteer(Guid id, 
+        FullName fullName, 
+        Description description, 
+        PhoneNumber phoneNumber, 
+        Requisites requisites, 
+        VolunteerDetails volunteerDetails) : base(id)
     {
         Id = id;
         FullName = fullName;
