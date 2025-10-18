@@ -7,9 +7,7 @@ public sealed class Breed : Entity<Guid>
 {
     #region Constructors
 
-    public Breed()
-    {
-    }
+    public Breed() { }
 
     private Breed(Guid id, Title title) : base(id)
     {
