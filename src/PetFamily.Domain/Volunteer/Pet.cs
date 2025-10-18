@@ -1,4 +1,5 @@
 ﻿using CSharpFunctionalExtensions;
+using PetFamily.Domain.Species;
 using PetFamily.Domain.Volunteer.ValueObjects;
 
 namespace PetFamily.Domain.Volunteer;
@@ -14,7 +15,7 @@ public sealed class Pet : Entity<Guid>
         PetType type,
         Description? description,
         Specifications? specifications,
-        string breed,
+        Breed breed,
         PhoneNumber phoneNumber,
         bool isNeutered,
         DateTime birthDate,
@@ -51,7 +52,7 @@ public sealed class Pet : Entity<Guid>
 
     public Specifications? Specifications { get; private set; }
 
-    public string Breed { get; private set; } = default!;
+    public Breed Breed { get; private set; } = default!;
 
     public PhoneNumber PhoneNumber { get; private set; } = default!;
 
@@ -76,7 +77,7 @@ public sealed class Pet : Entity<Guid>
         PetType type, 
         Description? description, 
         Specifications? specifications, 
-        string breed, 
+        Breed breed, 
         PhoneNumber phoneNumber, 
         bool isNeutered, 
         DateTime birthDate, 

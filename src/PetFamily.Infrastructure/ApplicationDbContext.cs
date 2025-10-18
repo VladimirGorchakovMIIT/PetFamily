@@ -23,7 +23,7 @@ public class ApplicationDbContext(IConfiguration configuration) : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseNpgsql(configuration.GetConnectionString(DATABASE_POSTGRES));
-        optionsBuilder.UseCamelCaseNamingConvention();
+        // optionsBuilder.UseCamelCaseNamingConvention();
         optionsBuilder.UseLoggerFactory(CreateLoggerFactory);
     }
     
