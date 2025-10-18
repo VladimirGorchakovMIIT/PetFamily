@@ -47,9 +47,9 @@ public sealed class Pet : Entity<Guid>
 
     public PetType Type { get; private set; }
 
-    public Description? Description { get; private set; }
+    public Description Description { get; private set; }
 
-    public Specifications? Specifications { get; private set; }
+    public Specifications Specifications { get; private set; }
 
     public string Breed { get; private set; } = default!;
 

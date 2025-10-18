@@ -14,11 +14,11 @@ public sealed class Volunteer : Entity<Guid>
     {
     }
 
-    private Volunteer(Guid id, 
-        FullName fullName, 
-        Description description, 
-        PhoneNumber phoneNumber, 
-        Requisites requisites, 
+    private Volunteer(Guid id,
+        FullName fullName,
+        Description description,
+        PhoneNumber phoneNumber,
+        Requisites requisites,
         VolunteerDetails volunteerDetails) : base(id)
     {
         Id = id;
@@ -30,7 +30,7 @@ public sealed class Volunteer : Entity<Guid>
     }
 
     #endregion
-    
+
     public override Guid Id { get; protected set; }
 
     public FullName FullName { get; private set; }
